@@ -1,6 +1,7 @@
-fastapi==0.95.2
-uvicorn[standard]==0.22.0
-jinja2==3.1.2
-weasyprint==57.1
-openai==0.27.8
+fastapi==0.111.0
+uvicorn==0.30.1
+python-multipart==0.0.9
 PyPDF2==3.0.1
+openai==1.35.13
+weasyprint==62.0
+Jinja2==3.1.4
