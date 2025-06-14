@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cover Letter</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 1in; /* Standard 1-inch margins for a letter */
+            line-height: 1.5;
+            color: #333;
+        }
+        .header, .footer {
+            text-align: center;
+        }
+        .contact-info {
+            margin-bottom: 1em;
+        }
+        .contact-info p {
+            margin: 0;
+            line-height: 1.2;
+        }
+        .date {
+            text-align: right;
+            margin-bottom: 1em;
+        }
+        .recipient-info {
+            margin-bottom: 1em;
+        }
+        .salutation {
+            margin-bottom: 1em;
+        }
+        .body-paragraph {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+        .closing {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .signature {
+            margin-top: 2em;
+        }
+        /* Optional: Basic styling for links */
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-info">
+        <p><strong>{{ name }}</strong></p>
+        <p>{{ email }}</p>
+        <p>{{ phone }}</p>
+        {% if linkedin %}<p><a href="{{ linkedin }}">{{ linkedin }}</a></p>{% endif %}
+        {% if github %}<p><a href="{{ github }}">{{ github }}</a></p>{% endif %}
+        {% if portfolio %}<p><a href="{{ portfolio }}">{{ portfolio }}</a></p>{% endif %}
+    </div>
+
+    <div class="date">
+        <p>{{ current_date }}</p>
+    </div>
+
+    <div class="recipient-info">
+        <p>Hiring Manager</p>
+        <p>{{ employer }}</p>
+        <p>{{ job_title }}</p>
+    </div>
+
+    <div class="salutation">
+        <p>Dear Hiring Manager,</p>
+    </div>
+
+    {% for paragraph in body_paragraphs %}
+        <p class="body-paragraph">{{ paragraph | e }}</p>
+    {% endfor %}
+
+    <div class="closing">
+        <p>Sincerely,</p>
+    </div>
+
+    <div class="signature">
+        <p>{{ name }}</p>
+    </div>
+</body>
+</html>
